@@ -1,0 +1,6 @@
+[
+    { "id": "1", "name": "biscotti", "price": 3.5 },
+    { "id": "2", "name": "mela", "price": 1.5 },
+    { "id": "3", "name": "formaggio", "price": 2 },
+    { "id": "4", "name": "pane", "price": 1 }
+]

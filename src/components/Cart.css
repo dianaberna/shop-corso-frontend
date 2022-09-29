@@ -1,0 +1,38 @@
+li{
+    display: grid;
+    grid-template-columns: 4fr repeat(3, 1fr);
+}
+li:nth-child(1){
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+li > div {
+    display: flex;
+    gap: 10px;
+}
+
+li > div > button{
+    appearance: none;
+    background-color: white;
+    border: 0px;
+    cursor: pointer;
+}
+
+.total{
+    float: right;
+}
+
+.clear button, .delete{
+    background-color: black;
+    border:0px;
+    color: white;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.quantity{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: fit-content;
+}
