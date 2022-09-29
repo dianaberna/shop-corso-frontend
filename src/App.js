@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+
 import {
   BrowserRouter,
   Routes,
   Route,
   Link
 } from "react-router-dom";
+
 import Shop from "./Shop";
 import Cart from "./components/Cart";
 import { getCookie, setCookie } from './hooks/cookie';
@@ -31,7 +33,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <div>
+      <>
         <nav>
             <h1><Link to="/">Shop</Link></h1>
             <div className="cart"><Link to="/cart">Carrello ({cart.reduce((partialSum, cartProduct) => partialSum + cartProduct.quantity, 0)})</Link></div>
@@ -41,7 +43,7 @@ export default function App() {
           <Route path="/cart" element={<Cart cart={cart} setCart={setCart}/>}/>
           <Route path="/" element={<Shop addProductToCart={addProductToCart} />}/>
         </Routes>
-      </div>
+      </>
     </BrowserRouter>
   );
 }

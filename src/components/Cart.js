@@ -12,6 +12,7 @@ const Cart = ({ cart, setCart }) => {
         });
         setTotal(sum.toFixed(2));
     };
+
     const clearCart = () => {
         setCart([]);
         setTotal(0);
@@ -19,16 +20,16 @@ const Cart = ({ cart, setCart }) => {
 
     const updateQuantity = (id, operation) => {
         let alreadyInCartPosition = cart.findIndex((el) => el.id === id);
+
         operation === "+"
             ? cart[alreadyInCartPosition].quantity++
             : cart[alreadyInCartPosition].quantity--;
 
+        // se la quantità è zero eliminare l'elemento dall'array
         if(cart[alreadyInCartPosition].quantity === 0) {
             cart.splice(alreadyInCartPosition, 1);
         }
 
-        // se la quantità è zero eliminare l'elemento dall'array
-        
         setCart([...cart]);
     };
 
