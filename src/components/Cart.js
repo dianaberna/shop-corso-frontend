@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import CartItem from "./CartItem";
 import "./Cart.css";
 
 const Cart = ({ cart, setCart }) => {
@@ -26,7 +27,7 @@ const Cart = ({ cart, setCart }) => {
             : cart[alreadyInCartPosition].quantity--;
 
         // se la quantità è zero eliminare l'elemento dall'array
-        if(cart[alreadyInCartPosition].quantity === 0) {
+        if (cart[alreadyInCartPosition].quantity === 0) {
             cart.splice(alreadyInCartPosition, 1);
         }
 
@@ -37,58 +38,45 @@ const Cart = ({ cart, setCart }) => {
         let alreadyInCartPosition = cart.findIndex((el) => el.id === id);
         cart.splice(alreadyInCartPosition, 1);
         setCart([...cart]);
-    }
+    };
 
     useEffect(() => {
         getTotal();
     }, [cart]);
 
     return (
-        <>
+        <div className="cart">
             <h2>
-                Carrello (
+                Cart [
                 {cart.reduce(
                     (partialSum, cartProduct) =>
                         partialSum + cartProduct.quantity,
                     0
                 )}
-                )
+                ]
             </h2>
             <ul>
                 <li>
-                    <span>Titolo</span>
-                    <span>Prezzo</span>
-                    <span>Quantità</span>
+                    <span>Name</span>
+                    <span>Price</span>
+                    <span>Quantity</span>
                 </li>
                 {cart.map((e, index) => (
-                    <li key={index}>
-                        <span>{e.title}</span>
-                        <span>{e.price}</span>
-                        <div className="quantity">
-                            {
-                                <button
-                                    onClick={() => updateQuantity(e.id, "-")}
-                                >
-                                    -
-                                </button>
-                            }
-                            <span>{e.quantity}</span>
-                            <button onClick={() => updateQuantity(e.id, "+")}>
-                                +
-                            </button>
-                            
-                        </div>
-                        <span>{<button className="delete" onClick={() => removeItemFromCart(e.id)}>Rimuovi</button>}</span>
-                    </li>
+                    <CartItem
+                        key={index}
+                        item={e}
+                        updateQuantity={updateQuantity}
+                        removeItemFromCart={removeItemFromCart}
+                    />
                 ))}
             </ul>
             <div className="total">
-                <strong>Totale: {total} €</strong>
+                <strong>Total: {total} €</strong>
             </div>
             <div className="clear">
-                <button onClick={clearCart}>Svuota carrello</button>
+                <button onClick={clearCart}>Empty the cart</button>
             </div>
-        </>
+        </div>
     );
 };
 

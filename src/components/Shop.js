@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import ProductList from "./components/ProductList";
+import ProductList from "./ProductList";
 
 const Shop = ({addProductToCart}) => {
-    const [products, setProducts] = useState([]);
+
+    const [products, setProducts] = useState([])
 
     // facoltativo - potevo usare data direttamente
     useEffect(() => {

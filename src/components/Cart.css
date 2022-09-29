@@ -1,38 +1,55 @@
-li{
+.cart{
+    margin: 1rem 0;
+}
+
+li {
     display: grid;
     grid-template-columns: 4fr repeat(3, 1fr);
+    margin-bottom: 10px;
+    align-items: center;
 }
-li:nth-child(1){
+li:nth-child(1) {
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 li > div {
-    display: flex;
     gap: 10px;
 }
 
-li > div > button{
+li > div > button {
     appearance: none;
     background-color: white;
-    border: 0px;
+    border: 1px solid black;
     cursor: pointer;
+    width: 25px;
+    height: 25px;
 }
 
-.total{
+.total {
     float: right;
 }
 
-.clear button, .delete{
+.clear button,
+.delete {
     background-color: black;
-    border:0px;
+    border: 0px;
     color: white;
     padding: 0.5rem 1rem;
     cursor: pointer;
 }
 
-.quantity{
+.clear{
+    margin: 3rem 0 0 2rem;
+}
+
+.total{
+    margin: 2rem 5rem 0 0;
+}
+
+.quantity {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     width: fit-content;
+    text-align: center;
 }

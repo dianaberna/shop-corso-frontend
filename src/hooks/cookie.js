@@ -10,9 +10,7 @@ const setCookie = (name, value, days = 7, path = "/") => {
 
     // 864e5 -> 1000*60*60*24 or 86400000 or 864e5 ovvero il calcolo di 24 ore
     // UTC -> Standard tempo universale senza fuso orario applicato (ora globale)
-    const expires = new Date(
-        Date.now() + days * 864e5
-    ).toUTCString();
+    const expires = new Date(Date.now() + days * 864e5).toUTCString();
 
     // document.cookie -> vado ad impostare il cookie, codifico il valore, imposto la scadenza ed il percorso
     document.cookie =
@@ -43,4 +41,4 @@ const deleteCookie = (name, path) => {
     alert("eliminato!");
 };
 
-export { getCookie, setCookie, deleteCookie }
+export { getCookie, setCookie, deleteCookie };
