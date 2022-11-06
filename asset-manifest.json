@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/shop-corso-frontend-09-22/static/css/main.c6c68d1e.css",
+    "main.js": "/shop-corso-frontend-09-22/static/js/main.3d75269f.js",
+    "index.html": "/shop-corso-frontend-09-22/index.html",
+    "main.c6c68d1e.css.map": "/shop-corso-frontend-09-22/static/css/main.c6c68d1e.css.map",
+    "main.3d75269f.js.map": "/shop-corso-frontend-09-22/static/js/main.3d75269f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c6c68d1e.css",
+    "static/js/main.3d75269f.js"
+  ]
+}
