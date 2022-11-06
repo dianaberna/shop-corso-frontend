@@ -11,4 +11,4 @@ I prodotti non vengono caricati da un json bensì da una chiamata API a (https:/
 
 Il carrello è salvato nei cookie con funzioni Javascript pure. 
 
-Deploy: (link)[https://dianaberna.github.io/shop-corso-frontend-09-22/]
+Deploy: [link](https://dianaberna.github.io/shop-corso-frontend-09-22/)
