@@ -47,7 +47,7 @@ export default function App() {
                         </Link>
                     </div>
                 </nav>
-
+                {/* routing */}
                 <Routes>
                 <Route
                         path="/cart"
